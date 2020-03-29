@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stone
+  - Crystal
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1394287671
+    locked: 0
+  - name: Player
+    uniqueID: 1314364985
     locked: 0
