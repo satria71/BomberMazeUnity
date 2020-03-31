@@ -7,6 +7,7 @@ TagManager:
   - Stone
   - Crystal
   - Chest
+  - Bomb
   layers:
   - Default
   - TransparentFX

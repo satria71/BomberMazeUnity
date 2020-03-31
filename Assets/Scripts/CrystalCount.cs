@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrystalCount : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CrystalCount : MonoBehaviour
     public GameObject winStage;
     private int total = 0;
     private int totalChest = 0;
+    public AudioSource coinSound;
     void Start()
     {
         UpdateCrystalText();
@@ -22,6 +24,7 @@ public class CrystalCount : MonoBehaviour
             total++;
             UpdateCrystalText();
             Destroy(hit.gameObject);
+            coinSound.Play();
         }
         else if (hit.CompareTag("Chest"))
         {
@@ -41,5 +44,9 @@ public class CrystalCount : MonoBehaviour
             winStage.SetActive(true);
             gameObject.SetActive(false);
         }
+    }
+
+    public void stage2(){
+        SceneManager.LoadScene("Stage2");
     }
 }
