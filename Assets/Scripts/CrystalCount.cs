@@ -8,6 +8,7 @@ public class CrystalCount : MonoBehaviour
 {
     public Text crystalText;
     public GameObject winStage;
+    public GameObject winStageChest;
     private int total = 0;
     private int totalChest = 0;
     public AudioSource coinSound;
@@ -28,8 +29,9 @@ public class CrystalCount : MonoBehaviour
         }
         else if (hit.CompareTag("Chest"))
         {
-            winStage.SetActive(true);
+            winStageChest.SetActive(true);
             Destroy(hit.gameObject);
+            gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }
@@ -39,14 +41,15 @@ public class CrystalCount : MonoBehaviour
         string msg = "" + total;
         crystalText.text = msg;
 
-        if (total == 1)
+        if (total == 5)
         {
             winStage.SetActive(true);
             gameObject.SetActive(false);
         }
     }
 
-    public void stage2(){
+    public void stage2()
+    {
         SceneManager.LoadScene("Stage2");
     }
 }
